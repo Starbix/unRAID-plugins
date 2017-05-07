@@ -4,9 +4,9 @@
 <!DOCTYPE PLUGIN [
 	<!ENTITY name      "unionfs">
 	<!ENTITY author    "starbix">
-	<!ENTITY version   "2016.05.07">
+	<!ENTITY version   "0.26">
 	<!ENTITY repo      "https://raw.githubusercontent.com/&author;/unRAID-plugins/master">
-	<!ENTITY pluginURL "https://raw.githubusercontent.com/starbix/unRAID-plugins/master/plugins/unionfs.plg">
+	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/unionfs.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
 	<!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
@@ -19,7 +19,7 @@
 
 
 <CHANGES>
-###2017.05.07
+###0.26
 - Inital release
 </CHANGES>
 
@@ -47,7 +47,7 @@ rm -rf /usr/local/emhttp/plugins/&name;
 rm -rf &plugin;/packages
 
 echo ""
-echo "unionfs uninstalled.  All packages installed with unionfs will remain until your next system reboot."
+echo "Unionfs uninstalled. Unionfs will remain until your next system reboot."
 </INLINE>
 </FILE>
 </PLUGIN>
