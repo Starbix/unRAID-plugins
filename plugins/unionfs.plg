@@ -28,7 +28,6 @@
 <INLINE>
 **unionfs**
 
-
 This project builds a stackable unification file system, which can appear to merge the contents of several directories (branches), while keeping their physical content separate.
 </INLINE>
 </FILE>
