@@ -31,7 +31,7 @@ unionfs
 </FILE>
 
 
-<FILE Name="&plugin;/packages/plexdrive-linux-amd64" Run="/bin/mv plexdrive-linux-amd64 plexdrive">
+<FILE Name="&plugin;/packages/plexdrive" Run="chmod +x">
 <URL>&repo;/&version;/plexdrive-linux-amd64</URL>
 <MD5>eaab8587a85b5d79ea575dad036d632f</MD5>
 </FILE>
