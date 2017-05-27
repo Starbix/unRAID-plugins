@@ -1,4 +1,3 @@
 # unRAID-plugins
-Installs unionfs on unRAID
-
-Use this URL: https://raw.githubusercontent.com/Starbix/unRAID-plugins/master/plugins/unionfs.plg
+- [unionfs](https://raw.githubusercontent.com/Starbix/unRAID-plugins/master/plugins/unionfs.plg)
+- [plexdrive](https://raw.githubusercontent.com/Starbix/unRAID-plugins/master/plugins/plexdrive.plg)
