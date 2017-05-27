@@ -40,7 +40,7 @@ The project is comparable to projects like [rclone](https://rclone.org/) or [nod
 </FILE>
 
 
-<FILE Name="/usr/bin/plexdrive" Run="chmod +x">
+<FILE Name="/usr/local/bin/plexdrive" Run="chmod +x">
 <URL>&repo;/&version;/plexdrive-linux-amd64</URL>
 <MD5>eaab8587a85b5d79ea575dad036d632f</MD5>
 </FILE>
@@ -53,7 +53,7 @@ echo "| Uninstalling plexdrive"
 echo "+=============================================================================="
 # Remove plugin related files
 rm -rf /usr/local/emhttp/plugins/&name;
-rm -rf /usr/bin/plexdrive
+rm -rf /usr/local/bin/plexdrive
 
 echo ""
 echo "plexdrive uninstalled. plexdrive will remain until your next system reboot."
