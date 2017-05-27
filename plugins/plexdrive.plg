@@ -20,7 +20,13 @@
 
 <CHANGES>
 ###3.0.0
-- Inital release
+**Warning: You should delete the local cache file first (~/.plexdrive/cache), otherwise, it could be that items are missing/duplicated in your mount. This is necessary because of the upgrade to API v3**
+
+- upgrade to API v3
+- added download speed limit
+- bugfixes in buffer
+- developer documentation
+- minor bugfixes
 </CHANGES>
 
 
