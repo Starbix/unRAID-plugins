@@ -1,0 +1,53 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!-- PLUGIN DEFINITIONS -->
+<!DOCTYPE PLUGIN [
+	<!ENTITY name      "plexdrive">
+	<!ENTITY author    "starbix">
+	<!ENTITY version   "3.0.0">
+	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
+	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
+	<!ENTITY plugin    "/boot/config/plugins/&name;">
+	<!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
+]>
+
+<PLUGIN  name="&name;"
+		 author="&author;"
+		 version="&version;"
+		 pluginURL="&pluginURL;"
+>
+
+
+<CHANGES>
+###0.26
+- Inital release
+</CHANGES>
+
+
+<FILE Name="&emhttp;/README.md">
+<INLINE>
+unionfs
+</INLINE>
+</FILE>
+
+
+<FILE Name="&plugin;/packages/plexdrive-linux-amd64" Run="/bin/mv ">
+<URL>&repo;/&version;/plexdrive-linux-amd64</URL>
+<MD5>eaab8587a85b5d79ea575dad036d632f</MD5>
+</FILE>
+
+<!-- PLUGIN REMOVAL SCRIPT -->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+echo "+=============================================================================="
+echo "| Uninstalling plexdrive"
+echo "+=============================================================================="
+# Remove plugin related files
+rm -rf /usr/local/emhttp/plugins/&name;
+rm -rf &plugin;/packages
+
+echo ""
+echo "plexdrive uninstalled. plexdrive will remain until your next system reboot."
+</INLINE>
+</FILE>
+</PLUGIN>
