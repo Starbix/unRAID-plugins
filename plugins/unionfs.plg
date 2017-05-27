@@ -20,13 +20,14 @@
 
 <CHANGES>
 ###0.26
-- Inital release
+- Initial release
 </CHANGES>
 
 
 <FILE Name="&emhttp;/README.md">
 <INLINE>
-unionfs
+## unionfs
+This project builds a stackable unification file system, which can appear to merge the contents of several directories (branches), while keeping their physical content separate.
 </INLINE>
 </FILE>
 
