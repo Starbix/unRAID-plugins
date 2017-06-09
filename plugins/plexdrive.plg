@@ -20,6 +20,11 @@
 
 <CHANGES>
 ###4.0.0
+- several bugfixes
+- specification of root node id
+- switch to MongoDB
+- deletion of shared files
+- improved debug logging
 
 ###3.0.0
 **Warning: You should delete the local cache file first (~/.plexdrive/cache), otherwise, it could be that items are missing/duplicated in your mount. This is necessary because of the upgrade to API v3**
