@@ -49,7 +49,7 @@ The project is comparable to projects like [rclone](https://rclone.org/) or [nod
 
 <FILE Name="/boot/config/plugins/&name;/install/plexdrive-linux-amd64">
 <URL>&repo;/&version;/plexdrive-linux-amd64</URL>
-<MD5>113028214fbb91182f3419359c6da373</MD5>
+<MD5>eaab8587a85b5d79ea575dad036d632f</MD5>
 </FILE>
 
 <!--
