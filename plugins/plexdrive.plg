@@ -90,7 +90,7 @@ echo ""
 echo "plexdrive uninstalled. plexdrive will remain until your next system reboot."
 </INLINE>
 </FILE>
-<FILE Name="/usr/local/sbin/plexdrive" Mode="0755">
+<FILE Name="/usr/sbin/plexdrive" Mode="0755">
 <INLINE>
 #!/bin/bash
 config=/mnt/user/appdata/plexdrive
