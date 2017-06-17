@@ -70,7 +70,7 @@ Install script.
 	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
 	chown root:root /usr/sbin/plexdriveorig
 	chmod 777 /usr/sbin/plexdriveorig
-	tar -zxvf &plugin;/install/mongodb-linux-x86_64-&mongoversion;.tgz &plugin;/install
+	tar -zxvf &plugin;/install/mongodb-linux-x86_64-&mongoversion;.tgz -C &plugin;/install
 	cp &plugin;/install/mongodb-linux-x86_64-&mongoversion;/bin/* /usr/bin
 	echo ""
 	echo "-----------------------------------------------------------"
