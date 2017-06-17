@@ -5,6 +5,7 @@
 	<!ENTITY name      "plexdrive">
 	<!ENTITY author    "starbix">
 	<!ENTITY version   "4.0.0">
+	<!ENTITY mongoversion   "3.4.5">
 	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
@@ -52,8 +53,8 @@ The project is comparable to projects like [rclone](https://rclone.org/) or [nod
 <MD5>113028214fbb91182f3419359c6da373</MD5>
 </FILE>
 
-<FILE Name="&plugin;/install/mongodb-linux-x86_64-3.4.5.tgz">
-<URL>https://raw.githubusercontent.com/Starbix/unRAID-plugins/master/packages/mongodb-linux-x86_64-3.4.5.tgz</URL>
+<FILE Name="&plugin;/install/mongodb-linux-x86_64-&mongoversion;.tgz">
+<URL>http://downloads.mongodb.org/linux/mongodb-linux-x86_64-&mongoversion;.tgz</URL>
 <MD5>840723894cd89a2c5f09c61791b52e16</MD5>
 </FILE>
 
@@ -69,8 +70,8 @@ Install script.
 	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
 	chown root:root /usr/sbin/plexdriveorig
 	chmod 777 /usr/sbin/plexdriveorig
-	tar -zxvf &plugin;/install/mongodb-linux-x86_64-3.4.5.tgz &plugin;/install
-	cp &plugin;/install/mongodb-linux-x86_64-3.4.5/bin/* /usr/bin
+	tar -zxvf &plugin;/install/mongodb-linux-x86_64-&mongoversion;.tgz &plugin;/install
+	cp &plugin;/install/mongodb-linux-x86_64-&mongoversion;/bin/* /usr/bin
 	echo ""
 	echo "-----------------------------------------------------------"
 	echo " &name; and mongoDB have been installed."
