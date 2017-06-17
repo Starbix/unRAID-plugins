@@ -32,9 +32,9 @@ This project builds a stackable unification file system, which can appear to mer
 </INLINE>
 </FILE>
 
-<FILE Name="&emhttp;/unionfs.gif">
-<URL>&repo;/images/unionfs.gif</URL>
-<MD5>494643778eb22ba41ae6528687f6d5dc</MD5>
+<FILE Name="&emhttp;/unionfs.png">
+<URL>&repo;/images/unionfs.png</URL>
+<MD5>bcb42a59f9902e07fd8344f370009d83</MD5>
 </FILE>
 
 <FILE Name="&plugin;/packages/unionfs-fuse-0.26-x86_64-1dj.txz" Run="/sbin/upgradepkg --install-new">
