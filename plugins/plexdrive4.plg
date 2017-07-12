@@ -5,7 +5,7 @@
 	<!ENTITY name      "plexdrive">
 	<!ENTITY author    "starbix">
 	<!ENTITY version   "4.0.0">
-	<!ENTITY mongoversion   "3.4.6">
+	<!ENTITY mongoversion   "3.4.5">
 	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
