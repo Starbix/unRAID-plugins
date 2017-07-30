@@ -1,0 +1,102 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!-- PLUGIN DEFINITIONS -->
+<!DOCTYPE PLUGIN [
+	<!ENTITY name      "plexdrive">
+	<!ENTITY author    "starbix">
+	<!ENTITY version   "3.0.0">
+	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
+	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
+	<!ENTITY plugin    "/boot/config/plugins/&name;">
+	<!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
+]>
+
+<PLUGIN  name="&name;"
+		 author="&author;"
+		 version="&version;"
+		 pluginURL="&pluginURL;"
+>
+
+
+<CHANGES>
+###4.0.0
+- several bugfixes
+- specification of root node id
+- switch to MongoDB
+- deletion of shared files
+- improved debug logging
+
+###3.0.0
+**Warning: You should delete the local cache file first (~/.plexdrive/cache), otherwise, it could be that items are missing/duplicated in your mount. This is necessary because of the upgrade to API v3**
+
+- upgrade to API v3
+- added download speed limit
+- bugfixes in buffer
+- developer documentation
+- minor bugfixes
+</CHANGES>
+
+
+<FILE Name="&emhttp;/README.md">
+<INLINE>
+**plexdrive**
+
+Plexdrive allows you to mount your Google Drive account as fuse filesystem.
+The project is comparable to projects like [rclone](https://rclone.org/) or [node-gdrive-fuse](https://github.com/thejinx0r/node-gdrive-fuse), but optimized for media streaming e.g. with plex ;)
+</INLINE>
+</FILE>
+
+
+<FILE Name="/boot/config/plugins/&name;/install/plexdrive-linux-amd64">
+<URL>&repo;/&version;/plexdrive-linux-amd64</URL>
+<MD5>eaab8587a85b5d79ea575dad036d632f</MD5>
+</FILE>
+
+
+<!--
+Install script.
+-->
+<FILE Run="/bin/bash" Method="install">
+<INLINE>
+
+	echo "+=============================================================================="
+	echo "| Installing plexdrive"
+	echo "+=============================================================================="
+	cp /boot/config/plugins/&name;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
+	chown root:root /usr/sbin/plexdriveorig
+	chmod 777 /usr/sbin/plexdriveorig
+	echo ""
+	echo "-----------------------------------------------------------"
+	echo " &name; has been installed."
+	echo "-----------------------------------------------------------"
+	echo ""
+
+</INLINE>
+</FILE>
+
+<!-- PLUGIN REMOVAL SCRIPT -->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+echo "+=============================================================================="
+echo "| Uninstalling plexdrive"
+echo "+=============================================================================="
+# Remove plugin related files
+rm -rf /usr/local/emhttp/plugins/&name;
+rm -rf /boot/config/plugins/&name;
+rm -rf /usr/sbin/plexdrive
+rm -rf /usr/sbin/plexdriveorig
+
+echo ""
+echo "plexdrive uninstalled. plexdrive will remain until your next system reboot."
+</INLINE>
+</FILE>
+<FILE Name="/usr/sbin/plexdrive" Mode="0755">
+<INLINE>
+#!/bin/bash
+config=/mnt/user/appdata/plexdrive
+plexdriveorig -c $config "$@";
+
+</INLINE>
+</FILE>
+
+</PLUGIN>
