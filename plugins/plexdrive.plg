@@ -4,7 +4,8 @@
 <!DOCTYPE PLUGIN [
 	<!ENTITY name      "plexdrive">
 	<!ENTITY author    "starbix">
-	<!ENTITY version   "3.0.0">
+	<!ENTITY version   "2017.8.3">
+	<!ENTITY pdversion   "5.0.0">
 	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
@@ -19,6 +20,14 @@
 
 
 <CHANGES>
+###5.0.0
+- MongoDB replaced by BoltDB
+- Performance increase
+- Async deletion of files
+- MacOS playback issue bugfix
+- Rename files/directories
+- Traverse directory structure (find/du)
+
 ###4.0.0
 - several bugfixes
 - specification of root node id
@@ -47,11 +56,9 @@ The project is comparable to projects like [rclone](https://rclone.org/) or [nod
 </FILE>
 
 
-<FILE Name="/boot/config/plugins/&name;/install/plexdrive-linux-amd64">
-<URL>&repo;/&version;/plexdrive-linux-amd64</URL>
-<MD5>eaab8587a85b5d79ea575dad036d632f</MD5>
+<FILE Name="&plugin;/install/plexdrive-linux-amd64">
+<URL>&repo;/&pdversion;/plexdrive-linux-amd64</URL>
 </FILE>
-
 
 <!--
 Install script.
@@ -62,7 +69,7 @@ Install script.
 	echo "+=============================================================================="
 	echo "| Installing plexdrive"
 	echo "+=============================================================================="
-	cp /boot/config/plugins/&name;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
+	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
 	chown root:root /usr/sbin/plexdriveorig
 	chmod 777 /usr/sbin/plexdriveorig
 	echo ""
@@ -85,6 +92,7 @@ rm -rf /usr/local/emhttp/plugins/&name;
 rm -rf /boot/config/plugins/&name;
 rm -rf /usr/sbin/plexdrive
 rm -rf /usr/sbin/plexdriveorig
+
 
 echo ""
 echo "plexdrive uninstalled. plexdrive will remain until your next system reboot."
