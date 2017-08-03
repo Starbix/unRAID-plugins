@@ -4,8 +4,8 @@
 <!DOCTYPE PLUGIN [
 	<!ENTITY name      "plexdrive">
 	<!ENTITY author    "starbix">
-	<!ENTITY version   "2017.7.30">
-	<!ENTITY pdversion   "5.0.0-beta.1501232161">
+	<!ENTITY version   "2017.8.3">
+	<!ENTITY pdversion   "5.0.0">
 	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
@@ -20,6 +20,14 @@
 
 
 <CHANGES>
+###5.0.0
+- MongoDB replaced by BoltDB
+- Performance increase
+- Async deletion of files
+- MacOS playback issue bugfix
+- Rename files/directories
+- Traverse directory structure (find/du)
+
 ###4.0.0
 - several bugfixes
 - specification of root node id
