@@ -69,9 +69,9 @@ Install script.
 	echo "+=============================================================================="
 	echo "| Installing plexdrive"
 	echo "+=============================================================================="
-	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
-	chown root:root /usr/sbin/plexdriveorig
-	chmod 777 /usr/sbin/plexdriveorig
+	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdrive
+	chown root:root /usr/sbin/plexdrive
+	chmod 777 /usr/sbin/plexdrive
 	echo ""
 	echo "-----------------------------------------------------------"
 	echo " &name; has been installed."
@@ -96,14 +96,6 @@ rm -rf /usr/sbin/plexdriveorig
 
 echo ""
 echo "plexdrive uninstalled. plexdrive will remain until your next system reboot."
-</INLINE>
-</FILE>
-<FILE Name="/usr/sbin/plexdrive" Mode="0755">
-<INLINE>
-#!/bin/bash
-config=/mnt/user/appdata/plexdrive
-plexdriveorig -c $config "$@";
-
 </INLINE>
 </FILE>
 
