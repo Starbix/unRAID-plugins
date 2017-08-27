@@ -32,7 +32,7 @@ A pure Unix shell script implementing ACME client protocol
 </FILE>
 
 
-<FILE Name="&plugin;/install/acme.sh.tar.gz">
+<FILE Name="&plugin;/install/&version;.tar.gz">
 <URL>&repo;/&version;.tar.gz</URL>
 </FILE>
 
