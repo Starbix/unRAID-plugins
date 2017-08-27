@@ -45,13 +45,11 @@ Install script.
 	echo "+=============================================================================="
 	echo "| Installing &name;"
 	echo "+=============================================================================="
-	mkdir -p /usr/sbin/acme.sh
-	tar xf &plugin;/install/&version;.tar.gz -C /usr/sbin/acme.sh --strip 1
+	tar xf &plugin;/install/&version;.tar.gz --strip 1
 	echo "-----------------------------------------------------------"
 	echo " &name; has been extracted."
 	echo "-----------------------------------------------------------"
-	mkdir -p /mnt/user/appdata/certs/acme.sh
-	/usr/sbin/acme.sh/acme.sh --install --home /mnt/user/appdata/certs/acme.sh
+	&plugin;/install/acme.sh --install --home /mnt/user/appdata/certs/acme.sh
 	echo "-----------------------------------------------------------"
 	echo " &name; has been installed."
 	echo "-----------------------------------------------------------"
