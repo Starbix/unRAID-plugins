@@ -9,6 +9,6 @@
 - Plexdrive allows you to mount your Google Drive account as fuse filesystem. The project is comparable to projects like [rclone](https://rclone.org/) or [node-gdrive-fuse](https://github.com/thejinx0r/node-gdrive-fuse), but optimized for media streaming e.g. with plex ;)
 - Plexdrive v4 now requires MongoDB (you probably need to update some startup scripts)
 
-### [plexdrive5-beta](https://raw.githubusercontent.com/Starbix/unRAID-plugins/master/plugins/plexdrive5-beta.plg)
+### [plexdrive5](https://raw.githubusercontent.com/Starbix/unRAID-plugins/master/plugins/plexdrive5.plg)
 - Plexdrive allows you to mount your Google Drive account as fuse filesystem. The project is comparable to projects like [rclone](https://rclone.org/) or [node-gdrive-fuse](https://github.com/thejinx0r/node-gdrive-fuse), but optimized for media streaming e.g. with plex ;)
 - Plexdrive v5 doesn't require MongoDB anymore
