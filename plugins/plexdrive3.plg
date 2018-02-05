@@ -19,13 +19,6 @@
 
 
 <CHANGES>
-###4.0.0
-- several bugfixes
-- specification of root node id
-- switch to MongoDB
-- deletion of shared files
-- improved debug logging
-
 ###3.0.0
 **Warning: You should delete the local cache file first (~/.plexdrive/cache), otherwise, it could be that items are missing/duplicated in your mount. This is necessary because of the upgrade to API v3**
 
@@ -60,7 +53,7 @@ Install script.
 <INLINE>
 
 	echo "+=============================================================================="
-	echo "| Installing plexdrive"
+	echo "| Installing &name;"
 	echo "+=============================================================================="
 	cp /boot/config/plugins/&name;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
 	chown root:root /usr/sbin/plexdriveorig
@@ -78,7 +71,7 @@ Install script.
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 echo "+=============================================================================="
-echo "| Uninstalling plexdrive"
+echo "| Uninstalling &name;"
 echo "+=============================================================================="
 # Remove plugin related files
 rm -rf /usr/local/emhttp/plugins/&name;
@@ -87,13 +80,13 @@ rm -rf /usr/sbin/plexdrive
 rm -rf /usr/sbin/plexdriveorig
 
 echo ""
-echo "plexdrive uninstalled. plexdrive will remain until your next system reboot."
+echo "&name; uninstalled. &name; will remain until your next system reboot."
 </INLINE>
 </FILE>
 <FILE Name="/usr/sbin/plexdrive" Mode="0755">
 <INLINE>
 #!/bin/bash
-config=/mnt/user/appdata/plexdrive
+config=/mnt/user/appdata/&name;
 plexdriveorig -c $config "$@";
 
 </INLINE>

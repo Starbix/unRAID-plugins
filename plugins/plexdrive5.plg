@@ -5,7 +5,7 @@
 	<!ENTITY name      "plexdrive">
 	<!ENTITY author    "starbix">
 	<!ENTITY version   "2017.8.3">
-	<!ENTITY pdversion   "5.0.0">
+	<!ENTITY pdversion "5.0.0">
 	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
@@ -67,7 +67,7 @@ Install script.
 <INLINE>
 
 	echo "+=============================================================================="
-	echo "| Installing plexdrive"
+	echo "| Installing &name;"
 	echo "+=============================================================================="
 	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdrive
 	chown root:root /usr/sbin/plexdrive
@@ -85,12 +85,12 @@ Install script.
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 echo "+=============================================================================="
-echo "| Uninstalling plexdrive"
+echo "| Uninstalling &name;"
 echo "+=============================================================================="
 # Remove plugin related files
 rm -rf /usr/local/emhttp/plugins/&name;
 rm -rf /boot/config/plugins/&name;
-rm -rf /usr/sbin/plexdrive
+rm -rf /usr/sbin/&name;
 rm -rf /usr/sbin/plexdriveorig
 
 

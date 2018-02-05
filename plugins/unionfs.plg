@@ -6,7 +6,7 @@
 	<!ENTITY author    "starbix">
 	<!ENTITY version   "0.26">
 	<!ENTITY repo      "https://raw.githubusercontent.com/&author;/unRAID-plugins/master">
-	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/unionfs.plg">
+	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/&name;.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
 	<!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
@@ -32,13 +32,13 @@ This project builds a stackable unification file system, which can appear to mer
 </INLINE>
 </FILE>
 
-<FILE Name="&emhttp;/unionfs.png">
-<URL>&repo;/images/unionfs.png</URL>
+<FILE Name="&emhttp;/&name;.png">
+<URL>&repo;/images/&name;.png</URL>
 <MD5>bcb42a59f9902e07fd8344f370009d83</MD5>
 </FILE>
 
-<FILE Name="&plugin;/packages/unionfs-fuse-0.26-x86_64-1dj.txz" Run="/sbin/upgradepkg --install-new">
-<URL>&repo;/packages/unionfs-fuse-0.26-x86_64-1dj.txz</URL>
+<FILE Name="&plugin;/packages/unionfs-fuse-&version;-x86_64-1dj.txz" Run="/sbin/upgradepkg --install-new">
+<URL>&repo;/packages/unionfs-fuse-&version;-x86_64-1dj.txz</URL>
 <MD5>f319bb542173f109d69b1e87f0d39a37</MD5>
 </FILE>
 
@@ -46,7 +46,7 @@ This project builds a stackable unification file system, which can appear to mer
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 echo "+=============================================================================="
-echo "| Uninstalling unionfs"
+echo "| Uninstalling &name;"
 echo "+=============================================================================="
 # Remove plugin related files
 rm -rf /usr/local/emhttp/plugins/&name;

@@ -6,7 +6,7 @@
 	<!ENTITY author    "starbix">
 	<!ENTITY version   "2017.7.14">
 	<!ENTITY pdversion   "4.0.0">
-	<!ENTITY mongoversion   "3.4.6">
+	<!ENTITY mongoversion	"3.6.2">
 	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
@@ -56,7 +56,6 @@ The project is comparable to projects like [rclone](https://rclone.org/) or [nod
 
 <FILE Name="&plugin;/install/mongodb-linux-x86_64-&mongoversion;.tgz">
 <URL>http://downloads.mongodb.org/linux/mongodb-linux-x86_64-&mongoversion;.tgz</URL>
-<MD5>a49c20e50ab9d34d4700e1bc31a130b1</MD5>
 </FILE>
 
 <!--
@@ -66,7 +65,7 @@ Install script.
 <INLINE>
 
 	echo "+=============================================================================="
-	echo "| Installing plexdrive and mongoDB"
+	echo "| Installing &name; and mongoDB"
 	echo "+=============================================================================="
 	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdriveorig
 	chown root:root /usr/sbin/plexdriveorig
@@ -86,12 +85,12 @@ Install script.
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 echo "+=============================================================================="
-echo "| Uninstalling plexdrive and mongoDB"
+echo "| Uninstalling &name; and mongoDB"
 echo "+=============================================================================="
 # Remove plugin related files
 rm -rf /usr/local/emhttp/plugins/&name;
 rm -rf /boot/config/plugins/&name;
-rm -rf /usr/sbin/plexdrive
+rm -rf /usr/sbin/&name;
 rm -rf /usr/sbin/plexdriveorig
 rm -rf /usr/bin/mongo
 rm -rf /usr/bin/mongod
@@ -109,13 +108,13 @@ rm -rf /usr/bin/mongotop
 rm -rf /usr/bin/bsondump
 
 echo ""
-echo "plexdrive and mongoDB uninstalled. plexdrive and mongoDB will remain until your next system reboot."
+echo "&name; and mongoDB uninstalled. &name; and mongoDB will remain until your next system reboot."
 </INLINE>
 </FILE>
 <FILE Name="/usr/sbin/plexdrive" Mode="0755">
 <INLINE>
 #!/bin/bash
-config=/mnt/user/appdata/plexdrive
+config=/mnt/user/appdata/&name;
 plexdriveorig -c $config "$@";
 
 </INLINE>
