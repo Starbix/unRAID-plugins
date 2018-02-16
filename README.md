@@ -1,4 +1,8 @@
 # unRAID-plugins
+> unRAID plugins I needed - not actively maintained anymore
+
+[![license](https://img.shields.io/github/license/starbix/docker-templates.svg)](https://github.com/starbix/docker-templates)
+
 ### [unionfs](https://raw.githubusercontent.com/Starbix/unRAID-plugins/master/plugins/unionfs.plg)
 - This project builds a stackable unification file system, which can appear to merge the contents of several directories (branches), while keeping their physical content separate.
 
