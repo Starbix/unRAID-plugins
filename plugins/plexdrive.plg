@@ -20,6 +20,13 @@
 
 
 <CHANGES>
+###5.1.0
+- Fix option parsing to work with 1 CPU core
+- Fallback to HOME for getting home directory
+- Add Team Drive Support
+- Remove allow_root mount option, bump to golang 1.13
+- Fix off-by one error in download range request
+
 ###5.0.0
 - MongoDB replaced by BoltDB
 - Performance increase
