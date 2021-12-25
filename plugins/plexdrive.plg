@@ -77,6 +77,8 @@ Install script.
 	echo "| Installing &name;"
 	echo "+=============================================================================="
 	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdrive
+	chown root:root /usr/sbin/plexdrive
+	chmod 755 /usr/sbin/plexdrive
 	echo ""
 	echo "-----------------------------------------------------------"
 	echo " &name; has been installed."
@@ -90,7 +92,7 @@ Install script.
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 echo "+=============================================================================="
-echo "| Uninstalling plexdrive"
+echo "| Uninstalling &name;"
 echo "+=============================================================================="
 # Remove plugin related files
 rm -rf /usr/local/emhttp/plugins/&name;
