@@ -4,8 +4,8 @@
 <!DOCTYPE PLUGIN [
 	<!ENTITY name      "plexdrive">
 	<!ENTITY author    "starbix">
-	<!ENTITY version   "2017.8.3">
-	<!ENTITY pdversion  "5.0.0">
+	<!ENTITY version   "2021.21.26">
+	<!ENTITY pdversion  "5.1.0">
 	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
