@@ -4,9 +4,9 @@
 <!DOCTYPE PLUGIN [
 	<!ENTITY name      "plexdrive">
 	<!ENTITY author    "starbix">
-	<!ENTITY version   "2017.8.3">
-	<!ENTITY pdversion  "5.0.0">
-	<!ENTITY repo      "https://github.com/dweidenfeld/plexdrive/releases/download">
+	<!ENTITY version   "2021.21.26">
+	<!ENTITY pdversion  "5.1.0">
+	<!ENTITY repo      "https://github.com/plexdrive/plexdrive/releases/download">
 	<!ENTITY pluginURL "https://raw.githubusercontent.com/&author;/unRAID-plugins/master/plugins/plexdrive.plg">
 	<!ENTITY plugin    "/boot/config/plugins/&name;">
 	<!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
@@ -20,6 +20,13 @@
 
 
 <CHANGES>
+###5.1.0
+- Fix option parsing to work with 1 CPU core
+- Fallback to HOME for getting home directory
+- Add Team Drive Support
+- Remove allow_root mount option, bump to golang 1.13
+- Fix off-by one error in download range request
+
 ###5.0.0
 - MongoDB replaced by BoltDB
 - Performance increase
@@ -70,6 +77,8 @@ Install script.
 	echo "| Installing &name;"
 	echo "+=============================================================================="
 	cp &plugin;/install/plexdrive-linux-amd64 /usr/sbin/plexdrive
+	chown root:root /usr/sbin/plexdrive
+	chmod 755 /usr/sbin/plexdrive
 	echo ""
 	echo "-----------------------------------------------------------"
 	echo " &name; has been installed."
@@ -83,7 +92,7 @@ Install script.
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 echo "+=============================================================================="
-echo "| Uninstalling plexdrive"
+echo "| Uninstalling &name;"
 echo "+=============================================================================="
 # Remove plugin related files
 rm -rf /usr/local/emhttp/plugins/&name;
